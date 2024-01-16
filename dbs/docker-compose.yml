@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  postgres_users:
+    image: postgres:14
+    container_name: postgres_users
+    environment:
+      POSTGRES_DB: users
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5433:5432"
+    volumes:
+      - ./init-users-db.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - db-sync-network
+
+  postgres_projects:
+    image: postgres:14
+    container_name: postgres_projects
+    environment:
+      POSTGRES_DB: projects
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5434:5432"
+    volumes:
+      - ./init-projects-db.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - db-sync-network
+
+networks:
+  db-sync-network:
+    driver: bridge
