@@ -278,9 +278,9 @@ curl -X POST 'http://localhost:8080/api/v1/dags/sync_data_dag/dagRuns' \
 
 5. Na página da DAG, clique no botão de ligar/desligar (normalmente chamado "Off" ou "On") para ativar a DAG.
 
-5. Clique no botão "Trigger DAG" para iniciar a execução da DAG manualmente.
+6. Clique no botão "Trigger DAG" para iniciar a execução da DAG manualmente.
 
-6. Aguarde o progresso da execução na interface web. Você pode visualizar logs e detalhes de execução na própria interface.
+7. Aguarde o progresso da execução na interface web. Você pode visualizar logs e detalhes de execução na própria interface.
 
 ### 11. Remover todos os recursos criados
 
